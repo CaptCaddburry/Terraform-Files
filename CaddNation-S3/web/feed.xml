@@ -1,0 +1,63 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>CaddNation</title>
+  <subtitle>A collective place to write and share all my technical notes</subtitle>
+  <updated>2023-03-27T10:08:49-04:00</updated>
+  <author>
+    <name>James Cadd</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
+  <rights> © 2023 James Cadd </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Setting up My Site</title>
+    <link href="http://localhost:4000/posts/jekyll-site/" rel="alternate" type="text/html" title="Setting up My Site" />
+    <published>2023-03-27T06:00:00-04:00</published>
+  
+    <updated>2023-03-27T06:00:00-04:00</updated>
+  
+    <id>http://localhost:4000/posts/jekyll-site/</id>
+    <content src="http://localhost:4000/posts/jekyll-site/" />
+    <author>
+      <name>James Cadd</name>
+    </author>
+
+  
+    
+    <category term="website" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Welcome to my site!
+
+Hi there and welcome to my new site! I’ve decided to create a space to write down all my technical notes and share them with the world.
+
+This is really going to be a place to just share everything that I’m currently working on and what I’m trying to learn.
+
+I figured my first post would be about how I created this site. This was actually quite easy, as the most work was clo...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+

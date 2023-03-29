@@ -1,0 +1,21 @@
+[
+  
+  {
+    "title": "Setting up My Site",
+    "url": "/posts/jekyll-site/",
+    "categories": "website",
+    "tags": "website, jekyll",
+    "date": "2023-03-27 06:00:00 -0400",
+    
+
+
+
+
+
+    
+    "snippet": "Welcome to my site!Hi there and welcome to my new site! I’ve decided to create a space to write down all my technical notes and share them with the world.This is really going to be a place to just ...",
+    "content": "Welcome to my site!Hi there and welcome to my new site! I’ve decided to create a space to write down all my technical notes and share them with the world.This is really going to be a place to just share everything that I’m currently working on and what I’m trying to learn.I figured my first post would be about how I created this site. This was actually quite easy, as the most work was cloning a Github Repository.The first thing to do was to head to Github and use the Chirpy-Starter repository as a template and create your own repository.The next thing you needed to do was to create a new SSH key pair in order to clone the repository. In your terminal, type in the following commands:ssh-keygen -t ed25519 -C \"your_email@example.com\"This will give you a prompt to name the new keypair and to add a password to it as well. Once you do, it will generate a new key pair on your system. Go ahead and copy the contents of the public key and store it in your Github account under Settings &gt; SSH and GPG keys.Also make sure to add the private key to your system, which I completely forgot to do…ssh-add ~/private-keyNext, you needed to clone your newly created repository onto your computer using the following command:git clone git@github.com:username/repository.gitAt this point, you should be all good to go and have the new repository stored on your computer. Go ahead and cd into the folder and use the bundle command to install any ruby requirements needed.At this point, you can go ahead and serve the site. cd into the folder and use the command:bundle exec jekyll serveAnd now, your new site is being hosted at localhost:4000"
+  }
+  
+]
+
