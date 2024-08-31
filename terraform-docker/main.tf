@@ -7,16 +7,14 @@ terraform {
   }
 }
 
-provider "docker" {}
-
 resource "docker_image" "nginx_image" {
-  name         = "nginx:latest"
-  keep_locally = false
+  name         = "nginx"
 }
 
-resource "docker_container" "nginx_container" {
+resource "docker_container" "nginx" {
   image = docker_image.nginx_image.name
-  name  = "tutorial"
+  name  = "nginx"
+
   ports {
     internal = 80
     external = 8000
