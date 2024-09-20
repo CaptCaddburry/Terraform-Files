@@ -1,3 +1,9 @@
+/#
+I created this script to be able to dynamically create Docker containers, based on information stored in a single variable.
+With each addition added to the variable, more images will be pulled from DockerHub and more containers will be spun up.
+I know you can just add more resources instead, but I think it's easier to have the changes made in the same spot every time instead of having to write out the same type of resources again.
+#/
+
 terraform {
     required_providers {
         docker = {
