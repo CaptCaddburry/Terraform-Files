@@ -42,20 +42,20 @@ variable "container_specs" {
 # This resource will download each Docker image listed in the variable
 #
 resource "docker_image" "images" {
-    count = length(var.container_specs)
-    name = var.container_specs[count.index].image_name
+    for_each = { for each in var.container_specs : each.name => each }
+    name = each.value.image_name
 }
 
 # This resource will create each Docker container based on the images that you downloaded and the ports stated in the variable
 #
 resource "docker_container" "system_containers" {
-    count = length(var.container_specs)
-    name = var.container_specs[count.index].name
-    image = docker_image.images[count.index].name
+    for_each = { for each in var.container_specs : each.name => each }
+    name = each.value.name
+    image = each.value.image_name
 
-    ports = {
-        internal = var.container_specs[count.index].internal_port
-        external = var.container_specs[count.index].external_port
+    ports {
+        internal = each.value.internal_port
+        external = each.value.external_port
     }
 }
 
