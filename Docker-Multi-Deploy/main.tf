@@ -35,12 +35,6 @@ variable "container_specs" {
             image_name = "httpd:latest"
             internal_port = 80
             external_port = 8081
-        },
-        {
-            name = "stage"
-            image_name = "tomcat:latest"
-            internal_port = 8080
-            external_port = 8082
         }
     ]
 }
@@ -48,15 +42,15 @@ variable "container_specs" {
 # This resource will download each Docker image listed in the variable
 #
 resource "docker_image" "image" {
-    for_each = { for each in var.container_specs : each.name => each }
+    for_each = {for each in var.container_specs : each.name => each}
     name = each.value.image_name
 }
 
 # This resource will create each Docker container based on the images that you downloaded and the ports stated in the variable
 #
 resource "docker_container" "system_container" {
-    depends_on = [ docker_image.image ]
-    for_each = { for each in var.container_specs : each.name => each }
+    depends_on = [docker_image.image]
+    for_each = {for each in var.container_specs : each.name => each}
     name = each.value.name
     image = each.value.image_name
 
@@ -71,6 +65,6 @@ resource "docker_container" "system_container" {
 #
 output "servers" {
     value = [
-        for each in var.container_specs : join(" ", ["${each.name} server:", join(":", ["http://localhost", each.external_port])])
+        for each in var.container_specs : "${each.name} server: http://localhost:${each.external_port}"
     ]
 }
